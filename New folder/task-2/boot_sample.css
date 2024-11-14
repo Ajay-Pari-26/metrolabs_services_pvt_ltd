@@ -4,6 +4,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    overflow: scroll;
+    stroke-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    /* For Chrome, Safari, and Edge */
 }
 
 .calculator-section {
