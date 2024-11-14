@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="bts.css">
+</head>
+
+<body>
+    <div>
+        <h1 class="text-center text-black">Calculator</h1>
+    </div>
+
+    <!-- Button Section -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <button type="button" onclick="showSection('mgsSection')" class="btn btn-warning w-100 mb-2">MGS Calculator</button>
+                <p><b>Investment Range:</b> Rs 500 to Rs 5,000</p>
+
+                <button type="button" onclick="showSection('sgsSection')" class="btn btn-warning w-100 mb-2">SGS Calculator</button>
+                <p><b>Investment Range:</b> 10 grams to 150 grams of gold</p>
+
+                <button type="button" onclick="showSection('igsSection')" class="btn btn-warning w-100 mb-2">IGS Calculator</button>
+                <p><b>Investment Range:</b> 150+ grams of gold</p>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="col-md-6">
+                <div id="mgsSection" class="calculator-section hidden">
+                    <h1 class="text-center text-warning">Gold</h1>
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <img style="height:50px;width:50px" src="C:/Users/DELL/Downloads/th (1).jpeg" alt="image_description" />
+                        </div>
+                        <div>
+                            <h3 class="text-warning"><b>BUYING PRICE</b></h3>
+                            <p class="text-warning">22K * 999.0</p>
+                        </div>
+                        <div>
+                            <h3 class="text-warning">₹7095/gm</h3>
+                            <p class="text-danger"><small style="font-size: 8px;">3.96%</small> since yesterday</p>
+                            <p class="text-danger">LIVE RATE</p>
+                        </div>
+                    </div>
+
+                    <div class="my-3">
+                        <p class="text-black">For MGS Scheme</p>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <p><b>Months</b></p>
+                                <input type="text" placeholder="12" class="form-control mb-2">
+                                <p><b>Total</b></p>
+                                <input type="text" placeholder="" class="form-control mb-2">
+                            </div>
+                            <div class="col-6 text-center">
+                                <img style="height:50px;width:50px" src="C:/Users/DELL/Pictures/Screenshots/Screenshot 2024-11-13 145639.png" alt="image_description" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="sgsSection" class="calculator-section hidden">
+                    <h1 class="text-center text-warning">Gold</h1>
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <img style="height:50px;width:50px" src="C:/Users/DELL/Downloads/th (1).jpeg" alt="image_description" />
+                        </div>
+                        <div>
+                            <h3 class="text-warning"><b>BUYING PRICE</b></h3>
+                            <p class="text-warning">22K * 999.0</p>
+                        </div>
+                        <div>
+                            <h3 class="text-warning">₹7095/gm</h3>
+                            <p class="text-danger"><small style="font-size: 8px;">3.96%</small> since yesterday</p>
+                            <p class="text-danger">LIVE RATE</p>
+                        </div>
+                    </div>
+
+                    <div class="my-3">
+                        <p class="text-black">For SGS Scheme</p>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <p><b>Grams</b></p>
+                                <input type="text" placeholder="10" class="form-control mb-2">
+                            </div>
+                            <div class="col-6 text-center">
+                                <img style="height:50px;width:50px" src="C:/Users/DELL/Pictures/Screenshots/Screenshot 2024-11-13 145639.png" alt="image_description" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="igsSection" class="calculator-section hidden">
+                    <h1 class="text-center text-warning">Gold</h1>
+
+                    <div class="d-flex justify-content-between">
+                        <div>
+                            <img style="height:50px;width:50px" src="C:/Users/DELL/Downloads/th (1).jpeg" alt="image_description" />
+                        </div>
+                        <div>
+                            <h3 class="text-warning"><b>BUYING PRICE</b></h3>
+                            <p class="text-warning">22K * 999.0</p>
+                        </div>
+                        <div>
+                            <h3 class="text-warning">₹7095/gm</h3>
+                            <p class="text-danger"><small style="font-size: 8px;">3.96%</small> since yesterday</p>
+                            <p class="text-danger">LIVE RATE</p>
+                        </div>
+                    </div>
+
+                    <div class="my-3">
+                        <p class="text-black">For IGS Scheme</p>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <p><b>Grams</b></p>
+                                <input type="text" id="gramsInput" placeholder="10" class="form-control mb-2">
+                            </div>
+                            <div class="col-6 text-center">
+                                <button onclick="calculateAmount()" class="btn btn-warning mb-2">
+                                    <img style="height:50px;width:50px" src="C:/Users/DELL/Pictures/Screenshots/Screenshot 2024-11-13 145639.png" alt="Calculate">
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12">
+                                <p><b>Amount</b></p>
+                                <input type="text" id="amountOutput" placeholder="₹70,950" class="form-control" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.calculator-section').forEach((section) => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Show MGS section by default on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            showSection('mgsSection');
+        });
+
+        function calculateAmount() {
+            // Define the price per gram
+            const pricePerGram = 7095;
+
+            // Get the grams input value
+            const grams = parseFloat(document.getElementById('gramsInput').value);
+
+            // Check if grams input is valid
+            if (isNaN(grams) || grams <= 0) {
+                alert("Please enter a valid number of grams.");
+                return;
+            }
+
+            // Calculate the total amount
+            const totalAmount = grams * pricePerGram;
+
+            // Display the total amount in the Amount field
+            document.getElementById('amountOutput').value = `₹${totalAmount.toLocaleString()}`;
+        }
+    </script>
+</body>
+
+</html>

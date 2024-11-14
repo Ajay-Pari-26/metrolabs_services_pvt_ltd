@@ -1,0 +1,152 @@
+/* style.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+
+/* Left Section with Buttons */
+
+.button-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.button-card {
+    text-align: center;
+}
+
+.calc-button {
+    background-color: #d4a25a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: box-shadow 0.3s;
+}
+
+.calc-button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-card p {
+    font-size: 14px;
+    color: #b5853a;
+}
+
+
+/* Right Section with Gold Price */
+
+.price-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.gold-title {
+    color: #b5853a;
+    font-weight: bold;
+    text-align: center;
+}
+
+.price-card {
+    padding: 10px;
+}
+
+.price-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.gold-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.buying-price {
+    color: #b5853a;
+    font-weight: bold;
+}
+
+.price-details {
+    text-align: right;
+}
+
+.price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.rate-change {
+    color: red;
+    font-size: 12px;
+}
+
+.percentage {
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.live-rate {
+    color: red;
+    font-weight: bold;
+}
+
+.investment-section {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.input-grams {
+    border: none;
+    text-align: center;
+    font-size: 18px;
+    background: none;
+    width: 50px;
+}
+
+.input-grams:focus {
+    outline: none;
+}
+
+.input-line {
+    margin: 5px auto;
+    width: 70%;
+    border: 0;
+    border-top: 1px solid #b5853a;
+}
+
+.amount {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.label {
+    color: #b5853a;
+    font-size: 14px;
+}

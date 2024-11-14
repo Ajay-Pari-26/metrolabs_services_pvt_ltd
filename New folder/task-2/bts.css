@@ -1,0 +1,212 @@
+body {
+    background-image: url('C:/Users/DELL/Downloads/th.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5%;
+}
+
+.main-1,
+.main-2 {
+    width: 48%;
+    padding-left: 15%;
+}
+
+.main-1 {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+button,
+p {
+    margin: 10px 0;
+}
+
+button {
+    background-color: gold;
+    color: white;
+    border-radius: 15px;
+    padding: 10px 50px;
+}
+
+p {
+    color: gold;
+}
+
+.main-2 {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 0px solid transparent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    margin: 20px;
+    margin-right: 40px;
+    border-radius: 20px;
+}
+
+.calculator-section {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.hover-button {
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hover-button:hover {
+    background-color: #45a049;
+}
+
+.main-2-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-2-2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main-2-2-1 {
+    padding-top: 10%;
+}
+
+.main-2-2-2 {
+    padding-left: 10px;
+}
+
+.gold {
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    /* align-content: center; */
+}
+
+.main-2-2-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.main-2-3 {
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    width: 550px;
+    height: 250px;
+    background-color: whitesmoke;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.months {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+}
+
+.main-2-3-1,
+.main-2-3-3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.custom-input {
+    border: none;
+    /* Remove default border */
+    border-bottom: 2px solid red;
+    /* Add red bottom border */
+    outline: none;
+    /* Remove the outline when the input is focused */
+    padding: 10px 0;
+    /* Add some vertical padding */
+    text-align: center;
+    /* Center the text inside the input */
+    width: 100%;
+    /* Optional: set the width of the input field */
+    background-color: whitesmoke;
+}
+
+
+/* Center the placeholder text */
+
+.custom-input::placeholder {
+    text-align: center;
+    color: black;
+    /* Optional: change the placeholder color */
+}
+
+
+/* Default hidden class for sections */
+
+.hidden {
+    display: none;
+}
+
+
+/* Style the section images */
+
+.calculator-section img {
+    max-height: 50px;
+    max-width: 50px;
+}
+
+
+/* Make the calculator section content responsive */
+
+.calculator-section {
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.calculator-section h3 {
+    font-weight: bold;
+}
+
+
+/* Style for the input fields */
+
+input[type="text"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+/* Button styles */
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+}
