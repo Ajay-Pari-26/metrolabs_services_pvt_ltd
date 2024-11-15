@@ -15,89 +15,105 @@ body::-webkit-scrollbar {
 
 .calculator-section {
     background-color: white;
-    padding: 20px;
+    padding: 10px;
+    /* Reduced padding */
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
     width: 100%;
+    height: fit-content;
+    /* Retain dynamic height based on content */
     max-width: 600px;
-    /* Optional: Limit width for better responsiveness */
     margin-left: auto;
     margin-right: auto;
     overflow: hidden;
     /* Ensures no overflow */
+    max-height: 400px;
+    /* Added max-height to limit the section's height */
+    overflow-y: auto;
+    /* Enables scrolling if content exceeds max-height */
+}
+
+.calculator-section {
+    background-color: white;
+    padding: 10px;
+    /* Reduce padding to fit elements */
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: fit-content;
+    /* Keep dynamic height */
+    max-width: 600px;
+    /* Optional: Restrict width */
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden;
+    /* Prevents overflow */
+    max-height: 500px;
+    /* Limit max-height */
+    display: flex;
+    flex-direction: column;
+    /* Align content vertically */
+    justify-content: space-between;
+    /* Distribute space between elements */
 }
 
 .container.d-flex {
     width: 100%;
     max-width: 100%;
-    /* Prevents overflow */
     display: flex;
     flex-direction: column;
-    /* Ensures vertical stacking of items */
-    justify-content: flex-end;
-    align-items: flex-end;
-    text-align: right;
-    /* Align the text to the right */
+    justify-content: flex-start;
+    /* Align items at the top */
+    align-items: flex-start;
+    /* Align items at the left */
+    text-align: left;
+    /* Align text to the left */
+    padding-bottom: 10px;
+    /* Add some spacing between content */
 }
 
 .text {
-    font-size: 24px;
-    /* Adjust size to your needs */
+    font-size: 20px;
+    /* Reduced font size */
 }
 
 .text-danger {
-    font-size: 12px;
-    /* Adjust size */
+    font-size: 10px;
+    /* Adjusted size for smaller text */
 }
 
 .text-danger small {
-    font-size: 10px;
-    /* Adjust small text size */
+    font-size: 8px;
+    /* Smaller size for the small text */
 }
-
-
-/* Optional: Ensure the images and buttons inside don't overflow */
 
 .container img,
 .container button {
-    max-width: 100%;
+    max-width: 50%;
+    /* Limit image and button size */
     height: auto;
 }
 
 .my-3 {
     background-color: lightgray;
-    /* Change to the desired background color */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    /* Adds a subtle box shadow */
-    padding: 20px;
-    /* Adds some padding inside the div */
+    padding: 10px;
+    /* Reduced padding */
     border-radius: 10px;
-    /* Optional: rounds the corners of the div */
 }
 
 .custom-input {
     border: none;
-    /* Remove default border */
     border-bottom: 2px solid red;
-    /* Add red bottom border */
     outline: none;
-    /* Remove the outline when the input is focused */
-    padding: 10px 0;
-    /* Add some vertical padding */
+    padding: 5px 0;
+    /* Reduced padding */
     text-align: center;
-    /* Center the text inside the input */
     width: 100%;
-    /* Optional: set the width of the input field */
     background-color: lightgray;
 }
-
-
-/* Center the placeholder text */
 
 .custom-input::placeholder {
     text-align: center;
     color: black;
-    /* Optional: change the placeholder color */
 }

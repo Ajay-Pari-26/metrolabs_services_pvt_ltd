@@ -1,0 +1,44 @@
+.row.justify-content-center.align-items-center {
+    height: 500px;
+}
+
+
+/* Initial state for the buttons */
+
+
+/* Initial state for the buttons */
+
+.btn {
+    background-color: transparent;
+    /* No background initially */
+    border: 2px solid transparent;
+    /* No border initially */
+    color: #007bff;
+    /* Button text color */
+    font-size: 16px;
+    /* Font size for text */
+    padding: 10px 20px;
+    /* Padding for button */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s, border 0.3s;
+    /* Smooth transition for background and border */
+}
+
+
+/* State when the button is clicked (active) */
+
+.btn.active {
+    background-color: white !important;
+    /* Blue background when clicked */
+    color: black;
+    /* White text color */
+    border: none;
+    /* Remove the border when clicked */
+}
+
+
+/* State when the button is focused (clicked or focused via keyboard) */
+
+
+/* State when the button is clicked (active) */

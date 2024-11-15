@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="signin.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        /* Initially hide both forms, except the active one */
+        
+        .content {
+            display: none;
+        }
+        
+        .content.active {
+            display: block;
+        }
+        /* Button styles */
+        
+        .btn {
+            background-color: transparent;
+            border: 2px solid transparent;
+            color: #007bff;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .btn.active {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+
+<body class="container p-5">
+    <div class="row justify-content-center align-items-center" style="box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);">
+        <div class="col-md-4 text-left pb-3">
+            <div class="row justify-content-center align-items-center" style="background-image: url('image.png'); background-size: cover; background-position: center;">
+                <div class="col-12">
+                    <div class="row">
+                        <h1>Join Our</h1>
+                    </div>
+                    <div class="row">
+                        <h1>Community</h1>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <div class="row">
+                        <button class="btn" onclick="toggleDiv('signup')">SIGN UP</button>
+                    </div>
+                    <div class="row">
+                        <button class="btn active" onclick="toggleDiv('login')">LOGIN</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="color: coral;">
+            <!-- Login Form -->
+            <div id="login" class="content active">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">User Login</h1>
+                    </div>
+                </div>
+                <div class="row pt-5 pb-1">
+                    <form class="px-5" onsubmit="handlelogin(event)">
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label">Email address :</label>
+                            <input type="email" class="form-control" id="loginEmail" style="border: 2px solid coral; border-radius: 20px;" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="loginPassword" class="form-label">Password :</label>
+                            <input type="password" class="form-control" id="loginPassword" style="border: 2px solid coral; border-radius: 20px;" required>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signup" class="content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="text-center">Sign Up</h1>
+                    </div>
+                </div>
+                <div class="row pt-5 pb-1">
+                    <form class="px-5" onsubmit="handleSignUp(event)">
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label">Email address :</label>
+                            <input type="email" class="form-control" id="signupEmail" style="border: 2px solid coral; border-radius: 20px;" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupPassword" class="form-label">Password :</label>
+                            <input type="password" class="form-control" id="signupPassword" style="border: 2px solid coral; border-radius: 20px;" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="signupConfirmPassword" class="form-label">Confirm Password :</label>
+                            <input type="password" class="form-control" id="signupConfirmPassword" style="border: 2px solid coral; border-radius: 20px;" required>
+                        </div>
+                        <div class="text-end">
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between Login and Sign Up forms
+        function toggleDiv(divId) {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            if (divId === 'login') {
+                buttons[1].classList.add('active');
+            } else {
+                buttons[0].classList.add('active');
+            }
+
+            const forms = document.querySelectorAll('.content');
+            forms.forEach(form => form.classList.remove('active'));
+            document.getElementById(divId).classList.add('active');
+        }
+
+        // Handle Sign Up submission
+        function handleSignUp(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            const email = document.getElementById('signupEmail').value;
+            const password = document.getElementById('signupPassword').value;
+            const confirmPassword = document.getElementById('signupConfirmPassword').value;
+
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match. Please try again.');
+                return;
+            }
+
+            alert(`Sign Up Successful!`);
+            toggleDiv('login'); // Redirect to Login page
+        }
+
+
+        function handlelogin(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            const email = document.getElementById('loginEmail').value;
+            const password = document.getElementById('loginPassword').value;
+
+
+
+
+            alert(`Accout does not exist. Please sign up`);
+            toggleDiv('signup'); // Redirect to sig up page
+        }
+    </script>
+</body>
+
+</html>
